@@ -27,7 +27,7 @@ export default function doc(): Plugin {
     config: () => ({
       resolve: {
         alias: {
-          foo: 'bar',
+          [packageJson.name]: './src/',
         },
       },
       define: {
