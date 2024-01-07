@@ -1,5 +1,7 @@
 # @rive/doc-vite-plugin
 
+Vite Plugin to wrap MDX and necessary Markdown plugins
+
 ## Install
 
 ```bash

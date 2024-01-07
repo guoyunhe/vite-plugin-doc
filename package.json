@@ -1,7 +1,7 @@
 {
   "name": "@rive/doc-vite-plugin",
   "version": "1.0.0",
-  "description": "...",
+  "description": "Vite Plugin to wrap MDX and necessary Markdown plugins",
   "keywords": [
     "node"
   ],
