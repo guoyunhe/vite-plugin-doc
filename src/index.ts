@@ -10,10 +10,10 @@ import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import remarkMdxImages from 'remark-mdx-images';
-import type { Plugin } from 'vite';
+import type { Plugin, PluginOption } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default function doc(): Plugin {
+export default function doc(): Array<Plugin | PluginOption> {
   let packageJson: any = {};
 
   try {
@@ -34,20 +34,20 @@ export default function doc(): Plugin {
         PACKAGE_NAME: `"${packageJson.name}"`,
         PACKAGE_VERSION: `"${packageJson.version}"`,
       },
-      plugins: [
-        {
-          enforce: 'pre',
-          ...mdx({
-            recmaPlugins: [recmaExportFilepath, recmaMdxDisplayname],
-            rehypePlugins: [rehypeMdxTitle, rehypeMdxCodeProps],
-            remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter, remarkMdxImages],
-          }),
-        },
-        react({ tsDecorators: true }),
-        tsconfigPaths(),
-      ],
     }),
   };
 
-  return plugin;
+  return [
+    {
+      enforce: 'pre',
+      ...mdx({
+        recmaPlugins: [recmaExportFilepath, recmaMdxDisplayname],
+        rehypePlugins: [rehypeMdxTitle, rehypeMdxCodeProps],
+        remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter, remarkMdxImages],
+      }),
+    },
+    ...react({ tsDecorators: true }),
+    tsconfigPaths(),
+    plugin,
+  ];
 }
