@@ -1,15 +1,19 @@
-# package-name
+# @rive/doc-vite-plugin
 
 ## Install
 
 ```bash
-npm i package-name
+npm i -D @rive/doc-vite-plugin
 ```
 
 ## Usage
 
 ```ts
-import { hello } from 'package-name';
+// vite.config.ts
+import { defineConfig } from 'vite';
+import doc from '@rive/doc-vite-plugin';
 
-hello('world');
+export defult defineConfig({
+  plugins: [doc()]
+});
 ```
