@@ -7,6 +7,7 @@ import rehypeMdxTitle from 'rehype-mdx-title';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+import remarkMdxImages from 'remark-mdx-images';
 import type { Plugin } from 'vite';
 
 export default function doc(): Plugin {
@@ -24,7 +25,7 @@ export default function doc(): Plugin {
           ...mdx({
             recmaPlugins: [recmaExportFilepath, recmaMdxDisplayname],
             rehypePlugins: [rehypeMdxTitle, rehypeMdxCodeProps],
-            remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter],
+            remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter, remarkMdxImages],
           }),
         },
         react(),

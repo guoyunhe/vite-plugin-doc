@@ -63,6 +63,7 @@
     "rehype-mdx-title": "^3.0.0",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.0",
-    "remark-mdx-frontmatter": "^4.0.0"
+    "remark-mdx-frontmatter": "^4.0.0",
+    "remark-mdx-images": "^3.0.0"
   }
 }
