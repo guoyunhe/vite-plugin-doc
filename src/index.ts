@@ -11,6 +11,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import remarkMdxImages from 'remark-mdx-images';
 import type { Plugin } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default function doc(): Plugin {
   let packageJson: any = {};
@@ -42,17 +43,11 @@ export default function doc(): Plugin {
             remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter, remarkMdxImages],
           }),
         },
-        react(),
+        react({ tsDecorators: true }),
+        tsconfigPaths(),
       ],
     }),
   };
 
   return plugin;
-}
-
-export async function getPackageJson() {
-  if (cached) return cached;
-  const raw = await readFile('package.json', 'utf-8');
-  const obj: PackageJson = JSON.parse(raw);
-  return obj;
 }
