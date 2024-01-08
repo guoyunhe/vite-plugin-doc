@@ -41,6 +41,7 @@ export default function doc(): Array<Plugin | PluginOption> {
     {
       enforce: 'pre',
       ...mdx({
+        providerImportSource: '@mdx-js/react',
         recmaPlugins: [recmaExportFilepath, recmaMdxDisplayname],
         rehypePlugins: [rehypeMdxTitle, rehypeMdxCodeProps],
         remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter, remarkMdxImages],
