@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 - 2024-01-08
+
+- Fixed `<MDXProvider/>` compatibility
+
 ## 1.0.0 - 2024-01-07
 
 - Added `@mdx-js/rollup` plugin with various Markdown plugins
