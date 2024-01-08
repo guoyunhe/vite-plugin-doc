@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/rive/doc-vite-plugin.git"
   },
-  "funding": "https://github.com/sponsors/rive",
+  "funding": "https://github.com/sponsors/guoyunhe",
   "license": "UNLICENSED",
   "author": {
     "name": "Guo Yunhe",
@@ -26,7 +26,8 @@
     "dist",
     "CHANGELOG.md",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "globals.d.ts"
   ],
   "scripts": {
     "build": "node-scripts build",
