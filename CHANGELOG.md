@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Added `remark-emoji` markdown plugin
+
 ## 1.1.0 - 2024-01-08
 
 - Added `@rive/doc-vite-plugin/globals` types
