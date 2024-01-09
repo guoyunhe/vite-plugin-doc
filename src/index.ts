@@ -6,6 +6,7 @@ import recmaExportFilepath from 'recma-export-filepath';
 import recmaMdxDisplayname from 'recma-mdx-displayname';
 import rehypeMdxCodeProps from 'rehype-mdx-code-props';
 import rehypeMdxTitle from 'rehype-mdx-title';
+import remarkEmoji from 'remark-emoji';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
@@ -44,7 +45,7 @@ export default function doc(): Array<Plugin | PluginOption> {
         providerImportSource: '@mdx-js/react',
         recmaPlugins: [recmaExportFilepath, recmaMdxDisplayname],
         rehypePlugins: [rehypeMdxTitle, rehypeMdxCodeProps],
-        remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter, remarkMdxImages],
+        remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter, remarkMdxImages, remarkEmoji],
       }),
     },
     ...react({ tsDecorators: true }),
